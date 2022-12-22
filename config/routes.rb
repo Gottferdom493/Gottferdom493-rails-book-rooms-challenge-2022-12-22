@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   resources :hotels do
     resources :rooms
   end
-
+  
+  resources :room, only: [:destroy]
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

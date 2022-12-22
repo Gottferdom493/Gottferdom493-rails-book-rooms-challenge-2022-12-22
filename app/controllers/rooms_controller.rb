@@ -5,6 +5,11 @@ class RoomsController < ApplicationController
     @rooms = Room.where(hotel: @hotel)
   end
 
+  def show
+    @rooms = Room.where(hotel: @hotel)
+    @room = Room.find(params[:id])
+  end
+
   def new
     @hotel = Hotel.find(params[:hotel_id])
     @room = Room.new
@@ -22,6 +27,17 @@ class RoomsController < ApplicationController
     end
   end
 
+  # def destroy
+  #   @room = Room.find(params[:id])
+  #   @room.destroy
+  #   redirect_to hotel_path(@room.hotel)
+  # end
+
+  def destroy
+    @room = Room.find(params[:id])
+    @room.destroy
+    redirect_to hotel_path(@room.post), status: :see_other
+  end
 
   private
 
