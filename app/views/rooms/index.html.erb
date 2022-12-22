@@ -1,0 +1,9 @@
+<h1>coucou les chambres</h1>
+
+<% @rooms.each do |room| %>
+  <h2><%= room.capacity %></h2>
+  <p><%= room.price %></p>
+<% end %>
+
+
+<%= link_to "Ajoute un Item", new_hotel_room_path %>
