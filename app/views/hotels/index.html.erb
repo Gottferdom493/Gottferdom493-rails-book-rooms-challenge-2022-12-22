@@ -1,0 +1,9 @@
+<h1>La liste des Hotels</h1>
+
+<% @hotels.each do |hotel| %>
+  <h2><%= hotel.name %></h2>
+  <p><%= hotel.adresse %></p>
+ <%= link_to "Supprimer", hotel_path(hotel), data: {turbo_method: :delete, turbo_confirm: "Etes vous sur?"} %>
+<% end %>
+
+<%= link_to'Création', new_hotel_path %>

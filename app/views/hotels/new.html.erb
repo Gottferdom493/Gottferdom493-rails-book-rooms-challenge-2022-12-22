@@ -1,0 +1,15 @@
+<h1>Création de l'Hotel</h1>
+
+<%= form_for @hotel do |f| %>
+
+  <%= f.label :name, "Entre un nom" %>
+  <%= f.text_field :name, placeholder: "Ajout le nom de ton Hotel" %>
+
+  <%= f.label :adresse, "Entre une adresse" %>
+  <%=f.text_field :adresse, placeholder: "Ajout l'adresse de ton Hotel" %>
+
+  <%= f.submit :Création %>
+
+<% end %>
+
+<%= link_to'Retour', hotels_path %>
