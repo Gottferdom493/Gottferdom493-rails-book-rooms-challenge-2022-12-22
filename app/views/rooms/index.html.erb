@@ -1,0 +1,14 @@
+<h1>Toutes les chambres</h1>
+
+<% @rooms.each do |room| %>
+
+  <p>capacitée de la chambre : <%= room.capacity %></p>
+  <p>prix/nuit : <%= room.price %>€</p>
+  <%= link_to "Aller voir", hotel_room_path(@hotel, room) %>
+  <%# <%= link_to 'Supprimer', hotel_rooms_path(), method: :delete, data: {confirm: "tu es sure?"} %>
+  <%= link_to "Supprimer", hotel_rooms_path(room), data: {turbo_method: :delete, turbo_confirm: "Etes vous sur?"} %>
+
+<% end %>
+
+<%= link_to "Ajoute un Item", new_hotel_room_path %>
+<%= link_to "Retour aux Hotels", hotels_path %>

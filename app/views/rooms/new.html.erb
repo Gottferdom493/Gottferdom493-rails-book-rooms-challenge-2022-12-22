@@ -1,0 +1,15 @@
+<h1>re coucou</h1>
+
+<%= form_for [ @hotel, @room] do |f| %>
+
+  <%= f.label :capacity, "Entre un capacity" %>
+  <%= f.number_field :capacity, placeholder: "Ajout le capacity" %>
+
+  <%= f.label :price, "Entre un price" %>
+  <%= f.number_field :price, placeholder: "Ajout le price" %>
+
+  <%= f.submit :Création %>
+
+<% end %>
+
+<%= link_to 'Back', hotel_rooms_path %>

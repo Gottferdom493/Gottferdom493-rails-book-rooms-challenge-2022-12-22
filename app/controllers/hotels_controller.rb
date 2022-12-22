@@ -25,7 +25,6 @@ class HotelsController < ApplicationController
     redirect_to hotel_path(@hotel), status: :see_other
   end
 
-
 private
 
   def hotel_params
