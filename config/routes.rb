@@ -3,9 +3,11 @@ Rails.application.routes.draw do
   root to: "pages#home"
 
   resources :hotels do
-    resources :rooms
+    resources :rooms do
+      resources :bookings
+    end
   end
-  
+
   resources :room, only: [:destroy]
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

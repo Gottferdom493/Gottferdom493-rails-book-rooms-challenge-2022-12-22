@@ -21,17 +21,11 @@ class RoomsController < ApplicationController
     @room.hotel = @hotel #-> le .hotel est utilisable grâce au belongs_to dans ton modèle. Cela permet de créer une méthode d'instance qui est .hotel
     @room.user = current_user  #-> permet de préciser quelle est l'utilisateur qui fait la création
     if @room.save
-      redirect_to hotel_rooms_path(), notice: "Comment has been added"
+      redirect_to hotel_rooms_path(), notice: "La chambre est ajouté"
     else
       render :new
     end
   end
-
-  # def destroy
-  #   @room = Room.find(params[:id])
-  #   @room.destroy
-  #   redirect_to hotel_path(@room.hotel)
-  # end
 
   def destroy
     @room = Room.find(params[:id])
