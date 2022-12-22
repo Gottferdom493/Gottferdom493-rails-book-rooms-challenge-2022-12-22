@@ -4,11 +4,9 @@
 
   <p>capacitée de la chambre : <%= room.capacity %></p>
   <p>prix/nuit : <%= room.price %>€</p>
-  <%= link_to "Aller voir", hotel_room_path(@hotel, room) %>
-  <%# <%= link_to 'Supprimer', hotel_rooms_path(), method: :delete, data: {confirm: "tu es sure?"} %>
+  <%= link_to "Reserver votre séjour", new_hotel_room_booking_path(@hotel, room ,@booking) %>
   <%= link_to "Supprimer", hotel_rooms_path(room), data: {turbo_method: :delete, turbo_confirm: "Etes vous sur?"} %>
-
 <% end %>
 
-<%= link_to "Ajoute un Item", new_hotel_room_path %>
-<%= link_to "Retour aux Hotels", hotels_path %>
+<p> <%= link_to "Ajoute une chambre", new_hotel_room_path %> </p>
+<p> <%= link_to "Revoir tous nos Hotels", hotels_path %> </p>
