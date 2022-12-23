@@ -1,4 +1,9 @@
+<div class="container">
+  <div class="row mt-5">
 <h1>Toutes nos chambres</h1>
+    <div class="col-12 col-sm-8 col-md-4 offset-sm-2 offset-md-4">
+      <div class="banner_homepage">
+
 
 <% @hotels.each do |hotel| %>
   <% @rooms.each do |room| %>
@@ -7,6 +12,11 @@
     <p>prix/nuit : <%= room.price %>€</p>
   <% end %>
 <% end %>
+
+      </div>
+    </div>
+  </div>
+</div>
 
 <%# /!\ Commande Admin pour la création des Hotels (je n'ai pas fait de seed) /!\ %>
 <%# <% @hotels.each do |hotel| %>
