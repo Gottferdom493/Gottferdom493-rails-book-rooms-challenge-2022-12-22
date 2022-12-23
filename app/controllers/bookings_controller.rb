@@ -9,11 +9,12 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     @room = Room.find(params[:room_id])
+    @hotel = Hotel.find(params[:hotel_id])
 
     @booking.room = @room
     @booking.user = current_user
     if @booking.save
-      redirect_to new_hotel_room_booking_path(), notice: "Réservation effectuée"
+      redirect_to hotel_room_path(@hotel, @room), notice: "Réservation effectuée"
     else
       render :new
     end

@@ -1,7 +1,9 @@
+<%# Page test  %>
+
 <h3>Votre Hotel est le <%= @hotel.name %></h3>
-<p>L'adresse : <%= @hotel.adresse %></p>
-<p>Nombre de personne maximun : <%= @room.capacity %></p>
-<p>Prix/nuit : <%= @room.price %>€</p>
+  <p>L'adresse : <%= @hotel.adresse %></p>
+  <p>Nombre de personne maximun : <%= @room.capacity %></p>
+  <p>Prix/nuit : <%= @room.price %>€</p>
 
 <h4>Choix des dates</h4>
 <%= form_for [@hotel, @room, @booking] do |f| %>

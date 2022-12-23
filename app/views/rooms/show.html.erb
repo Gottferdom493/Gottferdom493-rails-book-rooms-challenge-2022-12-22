@@ -1,5 +1,10 @@
 
-<%= form_for [@car, @booking] do |f| %>
+<h3>Votre Hotel est le <%= @hotel.name %></h3>
+  <p>L'adresse : <%= @hotel.adresse %></p>
+  <p>Nombre de personne maximun : <%= @room.capacity %></p>
+  <p>Prix/nuit : <%= @room.price %>€</p>
+
+<%= form_for [@hotel, @room, @booking] do |f| %>
 
   <%= f.date_field :start_date, placeholder: "Date de début" %>
   <%=f.date_field :end_date, placeholder: "Date de fin" %>
@@ -7,6 +12,4 @@
   <%= f.submit :Création %>
 <% end %>
 
-<p>Nombre de lit disponible: <%= @room.capacity %></p>
-<p>Prix/nuit : <%= @room.price %>€</p>
-<%= link_to 'Back', hotel_rooms_path %>
+<%= link_to 'Revoir toutes nos chambre', hotels_path %>

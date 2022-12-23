@@ -1,3 +1,5 @@
+<%# Page Admin %>
+
 <h1>Toutes les chambres</h1>
 
 <% @rooms.each do |room| %>
@@ -6,6 +8,7 @@
   <p>prix/nuit : <%= room.price %>€</p>
   <%= link_to "Reserver votre séjour", new_hotel_room_booking_path(@hotel, room ,@booking) %>
   <%= link_to "Supprimer", hotel_rooms_path(room), data: {turbo_method: :delete, turbo_confirm: "Etes vous sur?"} %>
+
 <% end %>
 
 <p> <%= link_to "Ajoute une chambre", new_hotel_room_path %> </p>
