@@ -1,7 +1,13 @@
+<div class="container">
+  <div class="row mt-5">
+    <h3>Votre Hotel est le <%= @hotel.name %></h3>
+    <div class="col-12 col-sm-8 col-md-4 offset-sm-2 offset-md-4">
+      <div class="banner_homepage">
 
-<h3>Votre Hotel est le <%= @hotel.name %></h3>
+
+
   <p>L'adresse : <%= @hotel.adresse %></p>
-  <p>Nombre de personne maximun : <%= @room.capacity %></p>
+  <p>Nombre de personnes maximun : <%= @room.capacity %></p>
   <p>Prix/nuit : <%= @room.price %>€</p>
 
 <%= form_for [@hotel, @room, @booking] do |f| %>
@@ -13,3 +19,8 @@
 <% end %>
 
 <%= link_to 'Revoir toutes nos chambre', hotels_path %>
+
+      </div>
+    </div>
+  </div>
+</div>
