@@ -6,8 +6,11 @@ class RoomsController < ApplicationController
   end
 
   def show
+    @hotel = Hotel.find(params[:hotel_id])
     @rooms = Room.where(hotel: @hotel)
     @room = Room.find(params[:id])
+
+    @booking = Booking.new
   end
 
   def new

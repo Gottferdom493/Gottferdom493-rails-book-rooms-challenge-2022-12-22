@@ -1,14 +1,18 @@
-<h1>Nos Hotels</h1>
+<h1>Toutes nos chambres</h1>
 
 <% @hotels.each do |hotel| %>
-  <h2><%= hotel.name %></h2>
-  <p><%= hotel.adresse %></p>
-  <%= link_to "Voir nos chambre", hotel_rooms_path(hotel) %>
-    <%# <%= link_to 'Supprimer', hotel_rooms_path(), method: :delete, data: {confirm: "tu es sure?"} %>
-
-  <%= link_to "Supprimer", hotel_path(hotel), data: {turbo_method: :delete, turbo_confirm: "Etes vous sur?"} %>
+  <% @rooms.each do |room| %>
+    <%= link_to "Voir nos chambre", hotel_room_path(hotel, room) %>
+    <p>capacitée de la chambre : <%= room.capacity %></p>
+    <p>prix/nuit : <%= room.price %>€</p>
+  <% end %>
 <% end %>
 
-<p>
-<%= link_to'Ajouter votre Hotel', new_hotel_path %>
-</p>
+<%# /!\ Commande Admin pour la création des Hotels (je n'ai pas fait de seed) /!\ %>
+<%# <% @hotels.each do |hotel| %>
+  <%# <p><%= hotel.name %></p>
+    <%# <p><%= hotel.adresse %></p>
+  <%# <%= link_to "Voir nos chambre", hotel_rooms_path(hotel) %>
+  <%# <%= link_to "Supprimer", hotel_path(hotel), data: {turbo_method: :delete, turbo_confirm: "Etes vous sur?"} %>
+<%# <% end %>
+<%# <p> <%= link_to'Ajouter votre Hotel', new_hotel_path %> </p>
