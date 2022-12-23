@@ -15,10 +15,10 @@
   <%= f.date_field :start_date, placeholder: "Date de début" %>
   <%=f.date_field :end_date, placeholder: "Date de fin" %>
 
-  <%= f.submit :Création %>
+  <%= f.submit :Création, class: "btn btn-ghost" %>
 <% end %>
 
-<%= link_to 'Revoir toutes nos chambre', hotels_path %>
+<%= link_to 'Revoir toutes nos chambre', hotels_path , class: "btn btn-gradient"%>
 
       </div>
     </div>

@@ -9,7 +9,7 @@
   <% @rooms.each do |room| %>
     <p>capacitée de la chambre : <%= room.capacity %></p>
     <p>prix/nuit : <%= room.price %>€</p>
-    <%= link_to "Voir nos chambre", hotel_room_path(hotel, room) %>
+    <%= link_to "Voir nos chambre", hotel_room_path(hotel, room), class: "btn btn-gradient"  %>
   <% end %>
 <% end %>
 
